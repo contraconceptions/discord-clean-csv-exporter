@@ -1,0 +1,13 @@
+{
+  "name": "discord-clean-csv-exporter",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Local-only Discord channel exports with date filters, CSV and JSON.",
+  "scripts": {
+    "lint": "node scripts/check.mjs",
+    "test": "node --test",
+    "check": "npm run lint && npm test",
+    "package": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/package.ps1"
+  },
+  "engines": { "node": ">=22" }
+}

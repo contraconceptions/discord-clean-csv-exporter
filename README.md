@@ -85,4 +85,3 @@ Run the [manual checklist](docs/TESTING.md) before distributing a release. Autom
 ## License
 
 MIT. See [LICENSE](LICENSE).
-

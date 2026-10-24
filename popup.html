@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Discord Clean CSV Exporter</title><link rel="stylesheet" href="popup.css"></head>
+<body><main>
+<header><span class="mark" aria-hidden="true">CSV</span><div><h1>Clean channel export</h1><p>Local processing. Your choice of filters.</p></div></header>
+<form>
+<label for="preset">Date preset</label><select id="preset"><option value="">Custom / saved range</option><option value="1">Today</option><option value="7">Last 7 days</option><option value="30">Last 30 days</option></select>
+<div class="date-range"><div><label for="startDate">From</label><input id="startDate" name="startDate" type="date" required></div><div><label for="endDate">Through</label><input id="endDate" name="endDate" type="date" required></div></div>
+<p id="timezone" class="hint"></p>
+<div class="date-range"><div><label for="author">Author contains</label><input id="author" name="author" placeholder="Any author"></div><div><label for="keyword">Message contains</label><input id="keyword" name="keyword" placeholder="Any text"></div></div>
+<fieldset><legend>Filters</legend>
+<label class="check"><input name="excludeMedia" type="checkbox" checked> Exclude image/video uploads</label>
+<label class="check"><input name="excludeAttachments" type="checkbox"> Exclude all uploaded attachments</label>
+<label class="check"><input name="excludeBots" type="checkbox"> Exclude bot messages</label>
+<label class="check"><input name="includeContext" type="checkbox"> Include channel ID and message link</label>
+</fieldset>
+<label for="format">Export format</label><select id="format" name="format"><option value="csv">CSV (spreadsheet safe)</option><option value="json">JSON (original values + scan details)</option></select>
+<button id="start" type="submit">Scan this channel</button>
+</form><p id="status" role="status" aria-live="polite">Keep this Discord channel open. Preview the results before downloading.</p>
+</main><script src="core.js"></script><script src="popup.js"></script></body></html>

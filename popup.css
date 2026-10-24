@@ -1,0 +1,116 @@
+:root {
+  color-scheme: light;
+  --ink: #102a43;
+  --paper: #f7f9fc;
+  --line: #cbd5e1;
+  --amber: #f2a900;
+  --muted: #52667a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-width: 340px;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Segoe UI Variable", "Segoe UI", sans-serif;
+}
+
+main { padding: 20px; }
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.mark {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 2px solid var(--ink);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .06em;
+}
+
+h1 {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.15;
+  letter-spacing: -.025em;
+}
+
+header p, #status {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.date-range {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px 11px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: white;
+  color: var(--ink);
+  font: inherit;
+}
+
+select { margin-bottom: 14px; }
+.hint { color: var(--muted); font-size: 12px; }
+fieldset { margin: 14px 0; border: 1px solid var(--line); }
+legend { font-weight: 700; font-size: 13px; }
+.check { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 400; }
+.check input { width: auto; }
+
+input:focus-visible, select:focus-visible, button:focus-visible {
+  outline: 3px solid rgba(242, 169, 0, .42);
+  outline-offset: 2px;
+}
+
+.rule {
+  display: grid;
+  grid-template-columns: 5px 1fr;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.rule span { background: var(--amber); }
+.rule p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.45; }
+
+button {
+  width: 100%;
+  border: 0;
+  border-radius: 3px;
+  padding: 11px 14px;
+  background: var(--ink);
+  color: white;
+  font: 700 14px/1 "Segoe UI Variable", "Segoe UI", sans-serif;
+  cursor: pointer;
+}
+
+button:hover { background: #173f5f; }
+button:disabled { cursor: wait; opacity: .58; }
+
+@media (prefers-reduced-motion: no-preference) {
+  button { transition: background-color 120ms ease, opacity 120ms ease; }
+}
